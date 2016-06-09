@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="main.js"></script>
+
+</head>
+<body>
+  <h1>Tick-Tac-Toe</h1>
+  <div>It is <span id="turn">turn</span></div><br>
+  <div id="board">
+    <table>
+      <tr id="row0">
+        <td class="0 square" id="0"></td>
+        <td class="0 square v" id="1"></td>
+        <td class="0 square" id="2"></td>
+      </tr>
+      <tr id="row1">
+        <td class="1 square h" id="3"></td>
+        <td class="1 square v h" id="4"></td>
+        <td class="1 square h" id="5"></td>
+      </tr>
+      <tr id="row2">
+        <td class="2 square" id="6"></td>
+        <td class="2 square v" id="7"></td>
+        <td class="2 square" id="8"></td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <div><button id="newGame">Restart</button></div>
+</body>
+</html>
