@@ -12,10 +12,13 @@ function init() {
   var turn;
   var gameBoard = [[0,0,0],[0,0,0],[0,0,0]];
   console.log(gameBoard);
-  newGame();
+  //newGame();
   
-  $('#newGame').on('click',newGame);
+  //$('#newGame').on('click',newGame);
+  $('#startGame').on('click', newGame);
 
+  var name1 = "";
+  var name2 = "";
   //p1=x
   var p1R = [0,0,0];
   var p1C = [0,0,0];
@@ -85,14 +88,14 @@ function init() {
     }
     console.log(p2D);
     if(isWinner(player)){
-      alert(`${player ? "O" : "X"} wins`);
+      alert(`${player ? name2 : name1} wins`);
       newGame();
     } else if (isOver()) {
       alert('Cats game, no one wins');
       newGame();
     }
     turn++;
-    turn%2 === 0 ? $('#turn').text("X's turn") : $('#turn').text("O's turn");
+    turn%2 === 0 ? $('#turn').text(`It is ${name1}'s turn`) : $('#turn').text(`It is ${name2}'s turn`);
 
   }
 
@@ -105,7 +108,7 @@ function init() {
   }
 
   function isWinner(player) {
-    console.log(player);
+    //console.log(player);
     if(player === 0) {
       var row = p1R.some(elem => elem === 3);
       var col = p1C.some(elem => elem === 3);
@@ -127,12 +130,18 @@ function init() {
     $('.square').off('click');
     $('.square').removeClass('zoomIn');
     
+    name1 = $('#name1').val();
+    name2 = $('#name2').val();
 
+    $('#name1').val('');
+    $('#name2').val('');
+    //$('#name1').val();
+    //console.log(name2);
     //re enable clicking on all elements
     $('.square').on('click',makeMove);
     count=0;
     turn = Math.floor(Math.random()*2);
-    turn%2 === 0 ? $('#turn').text("X's turn") : $('#turn').text("O's turn");
+    turn%2 === 0 ? $('#turn').text(`It is ${name1}'s turn`) : $('#turn').text(`It is ${name2}'s turn`);
     gameBoard = [[0,0,0],[0,0,0],[0,0,0]];
 
     p1R = [0,0,0];

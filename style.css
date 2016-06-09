@@ -9,7 +9,9 @@ body {
   max-width: 350px;
 
   }
-
+#turn{
+  color:#FF5722;
+}
 
 table {
   text-align: center;
