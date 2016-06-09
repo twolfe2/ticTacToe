@@ -1,5 +1,7 @@
 body {
   text-align: center;
+  background-color: #3F51B5;
+  color:#FFFFFF ;
 }
 
 #board {
@@ -20,10 +22,24 @@ table {
   width: 120px;
   height: 120px;
   font-size: x-large;
+  
+  border-collapse: collapse;
 
  }
 
- .v {
+table {
+  border-collapse: collapse;
+
+}
+
+table td {
+  border: 1px solid #B6B6B6;
+}
+
+.v {
+  border-right: none;
+}
+ /*.v {
   border-left: 1px solid #000;
   border-right: 1px solid #000;
  }
@@ -31,5 +47,5 @@ table {
  .h {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000 ;
- }
+ }*/
 

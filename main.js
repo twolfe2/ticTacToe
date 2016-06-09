@@ -32,7 +32,19 @@ function init() {
     //console.log(event);
     //console.log(event.target.classList[0]);
     var player = turn%2;
-    player === 0 ? $(this).text("X") : $(this).text("O");
+    if(player === 0) {
+      $(this).append("<span>X</span>");
+      $(this).children('span').addClass("animated zoomIn");
+      //$(this).text("X");
+      //$(event.target).addClass("animated zoomIn");
+      
+
+    } else {
+      $(this).append("<span>O</span>");
+      $(this).children('span').addClass("animated zoomIn");
+
+    }
+    //player === 0 ? $(this).text("X").addClass("animated zoomIn") : .addClass("animated zoomIn");
     //make it so this square can NOT be clicked again
     $(this).off("click");
     count++;
@@ -113,6 +125,9 @@ function init() {
   function newGame() {
     $('.square').empty();
     $('.square').off('click');
+    $('.square').removeClass('zoomIn');
+    
+
     //re enable clicking on all elements
     $('.square').on('click',makeMove);
     count=0;
@@ -127,6 +142,7 @@ function init() {
     p2R = [0,0,0];
     p2C = [0,0,0];
     p2D = [0,0];
+
     
   }
 
